@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Ad Only Plugin</title>
+  <title>Ad-Only Plugin</title>
 </head>
 
 <body>
@@ -26,8 +26,8 @@
   <!-- You can get a little bit faster load time if you include these in the player config and build -->
   <!-- them together as one unit using the Brightcove Player Management API. -->
   <!-- If you do that then they will be part of the player index.min.js. -->
-  <link href="https://players.brightcove.net/videojs-ima3/2/videojs.ima3.min.css" rel="stylesheet"/>
-  <script src="https://players.brightcove.net/videojs-ima3/2/videojs.ima3.min.js"></script>
+  <link href="https://players.brightcove.net/videojs-ima3/3/videojs.ima3.min.css" rel="stylesheet"/>
+  <script src="https://players.brightcove.net/videojs-ima3/3/videojs.ima3.min.js"></script>
   <!-- This is the ad-only player loader script. You can use it unmodified since it's hosted from -->
   <!-- Brightcove's player origin and served over CDN. You can also use it as an example of how to -->
   <!-- dynamically load the Brightcove Player and do your own thing. It can also be included in your -->
@@ -40,36 +40,11 @@
   // For more information on how this works read the comments in the source code included here:
   // https://players.brightcove.net/3723496277001/files/adonly.js
 
+  <script>
   // If you don't want it to expand the div you can use the injectAdOnlyPlayer function instead.
   bcPlayerTools.expandAndInjectAdOnlyPlayer({
   	div: adPlayerDiv,
-  // Un-comment this line if you want to try an adTag
-  //	adTag: "https://ads.brightcove.com/ads?vc=1&dur=5",
-  // Or you can use in-line VAST like this. Comment this part out if you want to use an ad tag
-  	adsResponse:
-  		'<VAST xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="vast.xsd"\ version="3.0">\
-  		 <Ad id="bc-test-10s-blue">\
-  		  <InLine>\
-  		   <AdSystem>BCTest</AdSystem>\
-  		   <AdTitle>10-Second Soccer Ball Countdown</AdTitle>\
-  		   <Description><![CDATA[10-Second Soccer Ball Countdown Ad]]></Description>\
-  		   <Creatives>\
-  		    <Creative AdID="bc-test-10s-blue">\
-  		     <Linear>\
-  		      <Duration>00:00:10</Duration>\
-  		      <VideoClicks>\
-  		        <ClickThrough><![CDATA[http://www.brightcove.com/]]></ClickThrough>\
-  		      </VideoClicks>\
-  		      <MediaFiles>\
-  		       <MediaFile id="bc_test" delivery="progressive" width="1280" height="720" type="video/mp4" bitrate="2096" scalable="true" maintainAspectRatio="true"><![CDATA[https://solutions.brightcove.com/abroadstone/10s_blue_ad_high.mp4]]></MediaFile>\
-  		       <MediaFile id="bc_test" delivery="progressive" width="480" height="270" type="video/mp4" bitrate="594" scalable="true" maintainAspectRatio="true"><![CDATA[https://solutions.brightcove.com/abroadstone/10s_blue_ad_mid.mp4]]></MediaFile>\
-  		      </MediaFiles>\
-  		     </Linear>\
-  		    </Creative>\
-  		   </Creatives>\
-  		  </InLine>\
-  		 </Ad>\
-  		</VAST>',
+  	adTag: "https://ads.brightcove.com/ads?vc=1&dur=5",
   	height: 360,
   	animationDuration: 200,
   // autoplays muted by default - which is the only way it will work in some browsers
@@ -77,6 +52,7 @@
   //  autoplay: false,
   //	muted: false
   });
+</script>
 
 </body>
 
